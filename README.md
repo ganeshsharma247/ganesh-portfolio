@@ -39,4 +39,4 @@ This portfolio is powered by Firebase Firestore for dynamic content management a
 
 GitHub: https://github.com/ganeshsharma247
 
-LinkedIn: Add your LinkedIn profile link here.
+LinkedIn: https://www.linkedin.com/in/ganesh-sharma01
