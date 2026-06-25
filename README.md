@@ -28,7 +28,7 @@ I am Ganesh Sharma, a B.Tech Computer Science Engineering student at Medi-Caps U
 
 ### Mobile Price Prediction Using Decision Tree
 
-Developed a Machine Learning classification model to predict mobile phone price categories based on hardware specifications such as RAM, battery power, internal memory, clock speed, and camera features. Implemented Decision Tree Classifier with hyperparameter tuning using GridSearchCV and performed feature importance analysis.
+Developed a Machine Learning classification model to predict mobile phone price categories based on hardware specifications such as RAM, battery power, internal memory, clock speed, and camera features. Implemented Decision Tree Classifier with hyperparameter tuning using GridSearchCV and performed feature importance analysis
 
 ## Education
 
