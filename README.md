@@ -5,7 +5,7 @@ https://ganeshsharma247.github.io/ganesh-portfolio/
 
 
 
-A personal portfolio website showcasing my Machine Learning projects, technical skills, education, and achievements.
+A personal portfolio website showcasing my Machine Learning projects, technical skills, education, and achievements
 
 ## About Me
 
