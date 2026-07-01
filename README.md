@@ -38,7 +38,7 @@ Medi-Caps University, Indore
 
 ## Portfolio Website
 
-This portfolio is powered by Firebase Firestore for dynamic content management and hosted using GitHub Pages.
+This portfolio is powered by Firebase Firestore for dynamic content management and hosted using GitHub Pages
 
 ## Contact
 
