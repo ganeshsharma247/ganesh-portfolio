@@ -5,7 +5,7 @@ https://ganeshsharma247.github.io/ganesh-portfolio/
 
 
 
-A personal portfolio website showcasing my Machine Learning projects, technical skills, education, and achievements.
+A personal portfolio website showcasing my Machine Learning projects, technical skills, education, and achievements
 
 ## About Me
 
@@ -28,7 +28,7 @@ I am Ganesh Sharma, a B.Tech Computer Science Engineering student at Medi-Caps U
 
 ### Mobile Price Prediction Using Decision Tree
 
-Developed a Machine Learning classification model to predict mobile phone price categories based on hardware specifications such as RAM, battery power, internal memory, clock speed, and camera features. Implemented Decision Tree Classifier with hyperparameter tuning using GridSearchCV and performed feature importance analysis.
+Developed a Machine Learning classification model to predict mobile phone price categories based on hardware specifications such as RAM, battery power, internal memory, clock speed, and camera features. Implemented Decision Tree Classifier with hyperparameter tuning using GridSearchCV and performed feature importance analysis
 
 ## Education
 
@@ -38,7 +38,7 @@ Medi-Caps University, Indore
 
 ## Portfolio Website
 
-This portfolio is powered by Firebase Firestore for dynamic content management and hosted using GitHub Pages.
+This portfolio is powered by Firebase Firestore for dynamic content management and hosted using GitHub Pages
 
 ## Contact
 
