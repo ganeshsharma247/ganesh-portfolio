@@ -550,7 +550,7 @@ footer{border-top:1px solid var(--border);padding:40px 0;position:relative;z-ind
 <!-- Firebase SDK -->
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getFirestore, collection, onSnapshot, orderBy, query } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import {getFirestore,collection,addDoc, serverTimestamp, onSnapshot, orderBy, query } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 // ============================================================
 // 🔥 PASTE YOUR FIREBASE CONFIG HERE (same as admin.html)
@@ -833,18 +833,63 @@ const statObs=new IntersectionObserver(entries=>{
 document.querySelectorAll('.hero-stats').forEach(el=>statObs.observe(el));
 
 // ===== CONTACT FORM =====
-document.getElementById('contact-form').addEventListener('submit',e=>{
-  e.preventDefault();
-  const btn=e.target.querySelector('[type=submit]');
-  btn.disabled=true; btn.textContent='Sending...';
-  const msg=document.getElementById('form-msg');
-  setTimeout(()=>{
-    msg.style.display='block';
-    msg.textContent='✓ Message sent! I\'ll get back to you within 24 hours.';
-    e.target.reset(); btn.disabled=false;
-    btn.innerHTML='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Message';
-    setTimeout(()=>msg.style.display='none',5000);
-  },1200);
+document.getElementById("contact-form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const btn = e.target.querySelector("[type=submit]");
+    const msg = document.getElementById("form-msg");
+
+    btn.disabled = true;
+    btn.textContent = "Sending...";
+
+    try {
+
+        await addDoc(collection(db, "messages"), {
+
+            name: document.getElementById("cf-name").value,
+
+            email: document.getElementById("cf-email").value,
+
+            subject: document.getElementById("cf-subject").value,
+
+            message: document.getElementById("cf-msg").value,
+
+            createdAt: serverTimestamp(),
+
+            read: false
+
+        });
+
+        msg.style.display = "block";
+        msg.style.color = "#22c55e";
+        msg.textContent = " Message sent successfully! I'll get back to you soon.";
+
+        e.target.reset();
+
+    } catch (error) {
+
+        console.error(error);
+
+        msg.style.display = "block";
+        msg.style.color = "#ef4444";
+        msg.textContent = " Failed to send message.";
+
+    }
+
+    btn.disabled = false;
+
+    btn.innerHTML = `
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="22" y1="2" x2="11" y2="13"/>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+        Send Message
+    `;
+
+    setTimeout(() => {
+        msg.style.display = "none";
+    }, 5000);
+
 });
 </script>
 </body>
